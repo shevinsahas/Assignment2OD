@@ -1,7 +1,7 @@
 public abstract class Person {
     // Attributes that describe a person
-    private String name;      // The person's full name
-    private int age;          // The person's age in years
+    private String name;         // The person's full name
+    private int age;             // The person's age in years
     private String phoneNumber;  // The person's contact phone number
 
     // Default constructor initializes a person without setting any attributes
@@ -9,11 +9,11 @@ public abstract class Person {
 
     }
 
-    // To set instance variables, used a constructor with parameters.
+    // Constructor that sets the person's name, age, and phone number
     public Person(String name, int age, String phoneNumber) {
-        this.name = name;           // Set the name
-        this.age = age;             // Set the age
-        this.phoneNumber = phoneNumber; // Set the phone number
+        this.name = name;                // Assign the provided name to the person
+        this.age = age;                  // Assign the provided age to the person
+        this.phoneNumber = phoneNumber;  // Assign the provided phone number to the person
     }
 
     // Methods to access and modify the person's details

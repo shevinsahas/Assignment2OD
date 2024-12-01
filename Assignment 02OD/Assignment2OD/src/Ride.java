@@ -224,4 +224,25 @@ public class Ride implements RideInterface {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(","); // Splits the line into individual data fields
-                // Crea
+                // Creates a new Visitor object with the imported data
+                Visitor visitor = new Visitor(data[0], Integer.parseInt(data[1]), data[2], data[3], data[4]);
+                AddVisitorToHistory(visitor); // Adds the visitor to the ride history using the existing method
+            }
+            System.out.println("Visitors restored from " + filename);
+        } catch (IOException e) {
+            System.out.println("An error occurred while restoring visitors: " + e.getMessage());
+        } finally {
+            lock.unlock(); // Releases the lock after modification
+        }
+    }
+
+    // Clears all records from the ride history in a thread-safe manner
+    public void clearRideHistory() {
+        lock.lock(); // Acquires the lock before modifying the ride history
+        try {
+            rideHistory.clear(); // Removes all visitors from the ride history
+        } finally {
+            lock.unlock(); // Releases the lock after modification
+        }
+    }
+}

@@ -1,24 +1,24 @@
 public class Employee extends Person {
-    //Attributes specific to an employee
-    private String shift; //work shift assigned to the employee
-    private String role; // The job role of the employee
+    // Attributes specific to an employee
+    private String shift;  // The work shift assigned to the employee (e.g., morning, evening)
+    private String role;   // The job role of the employee (e.g., ride operator, ticket checker)
 
-    //Default constructor initializes an employee without setting any specific attributes
-    public Employee(){
-        super(); //calls the default constructor of the Person class
+    // Default constructor initializes an employee without setting any specific attributes
+    public Employee() {
+        super();  // Calls the default constructor of the Person class
     }
 
     // Constructor that sets the employee's personal details along with their shift and role
     public Employee(String name, int age, String phoneNumber, String shift, String role) {
-        super(name, age, phoneNumber); //intializes the inherited attributes from Person
-        this.shift = shift; //Assigns the specified work shift to the employee
-        this.role = role;  // Assigns the specified role to the employee
+        super(name, age, phoneNumber);  // Initializes the inherited attributes from Person
+        this.shift = shift;             // Assigns the specified work shift to the employee
+        this.role = role;               // Assigns the specified role to the employee
     }
 
-    //methods to acess and modify the employee's work shift
+    // Methods to access and modify the employee's specific details
 
-    //retrieves the employee's work shift
-     public String getShift() {
+    // Retrieves the employee's work shift
+    public String getShift() {
         return shift;
     }
 
