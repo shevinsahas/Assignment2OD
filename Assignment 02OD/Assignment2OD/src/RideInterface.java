@@ -1,4 +1,4 @@
-public interface RideInterface {
+public  interface RideInterface {
     void AddVisitorToQueue(Visitor visitor);
     void RemoveVisitorFromQueue(Visitor visitor);
     void PrintQueue();
